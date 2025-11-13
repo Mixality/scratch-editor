@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Windows compatibility: don't fail if commitlint has issues
-npx --no-install commitlint --edit "$1" || true
+npx --no-install commitlint --edit "$1"
