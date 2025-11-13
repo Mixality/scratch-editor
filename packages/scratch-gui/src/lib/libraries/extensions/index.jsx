@@ -49,6 +49,11 @@ import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 import faceSensingIconURL from './faceSensing/faceSensing.png';
 import faceSensingInsetIconURL from './faceSensing/faceSensing-small.svg';
 
+import mqttImage from './mqtt/mqtt.png';
+import mqttInsetImage from './mqtt/mqtt-small.png';
+import mqttConnectionIconURL from './mqtt/mqtt-illustration.png';
+import mqttConnectionSmallIconURL from './mqtt/mqtt-icon.png';
+
 export default [
     {
         name: (
@@ -412,5 +417,28 @@ export default [
             />
         ),
         helpLink: 'https://scratch.mit.edu/wedo'
-    }
+    },
+    {
+        name: 'MQTT (beta)',
+        extensionId: 'mqtt',
+        collaborator: '',
+        iconURL: mqttImage,
+        insetIconURL: mqttInsetImage,
+        description: (
+            <FormattedMessage
+                defaultMessage="Get data from MQTT brokers."
+                description="Description for the 'MQTT' extension"
+                id="gui.extension.mqtt"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: false,
+        internetConnectionRequired: true,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: mqttConnectionIconURL,
+        connectionSmallIconURL: mqttConnectionSmallIconURL,
+        connectingMessage: 'connecting to MQTT broker'
+    },
 ];

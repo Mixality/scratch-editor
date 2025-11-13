@@ -49,3 +49,62 @@ contributors. Thank you for your contributions and support. _[Scratch on!](https
 We provide [Scratch](https://scratch.mit.edu) free of charge, and want to keep it that way! Please consider making a
 [donation](https://secure.donationpay.org/scratchfoundation/) to support our continued engineering, design, community,
 and resource development efforts. Donations of any size are appreciated. Thank you!
+
+## Setup
+
+1. Install dependencies:
+
+```powershell
+npm install
+```
+
+2. Build project:
+
+```powershell
+npm run build
+```
+
+
+sudo apt update
+sudo apt upgrade
+sudo apt install mosquitto mosquitto-clients
+sudo systemctl start mosquitto
+sudo systemctl status mosquitto
+
+mosquitto_sub -t test
+mosquitto_pub -t test -m "Hallo Welt"
+
+sudo nano /etc/mosquitto/conf.d/local.conf
+sudo mosquitto_passwd -c /etc/mosquitto/credentials sidekick
+sudo systemctl restart mosquitto
+
+
+
+1. Mosquitto installieren:
+
+winget install EclipseFoundation.Mosquitto
+
+
+2. Mosquitto mit WebSocket-Support konfigurieren:
+
+C:\Program Files\mosquitto\mosquitto.conf
+
+# Standard MQTT Port
+listener 1883
+protocol mqtt
+
+# WebSocket Port für Browser
+listener 9001
+protocol websockets
+
+# Erlaube anonyme Verbindungen (für Entwicklung)
+allow_anonymous true
+
+
+3. Mosquitto starten:
+
+# Als Service (nach Installation)
+net start mosquitto
+
+# ODER manuell
+mosquitto -c "C:\Program Files\mosquitto\mosquitto.conf" -v
